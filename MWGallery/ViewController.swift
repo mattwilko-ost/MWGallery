@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UICollectionViewController {
     
     private var showingZoomedImage = false
+    private var animatingTransition = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,25 +38,33 @@ class ViewController: UICollectionViewController {
             cell.imageView.image = UIImage(named: "4")
         case 4:
             cell.imageView.image = UIImage(named: "5")
-        default: break
+        default:
+            break
         }
         
         cell.scrollView.userInteractionEnabled = showingZoomedImage
         cell.scrollView.zoomScale = 1
+        cell.delegate = self
         
         return cell
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if !showingZoomedImage {
+            showingZoomedImage = true
+            for cell in collectionView.visibleCells() as! [GalleryCellCollectionViewCell] {
+                cell.scrollView.userInteractionEnabled = true
+            }
             collectionView.pagingEnabled = true
             let layout = ZoomLayout()
+            layout.page = indexPath.row
             layout.itemSize = collectionView.bounds.size
-            collectionView.setCollectionViewLayout(layout, animated: true, completion: { completed in
+            collectionView.startInteractiveTransitionToCollectionViewLayout(layout, completion: { completed, _ in
                 if completed {
-                    self.showingZoomedImage = true
+                    
                 }
             })
+            collectionView.finishInteractiveTransition()
         }
     }
     
@@ -67,9 +76,36 @@ class ViewController: UICollectionViewController {
         }
         
         if !CGSizeEqualToSize(flowLayout.itemSize, size) {
+            for cell in collectionView!.visibleCells() as! [GalleryCellCollectionViewCell] {
+                cell.scrollView.zoomScale = 1
+            }
             flowLayout.itemSize = self.collectionView!.frame.size
             flowLayout.invalidateLayout()
         }
     }
+}
+
+extension ViewController: GalleryCellDelegate {
+    
+    func galleryCell(cell: GalleryCellCollectionViewCell, didZoomToScale scale: CGFloat) {
+        if scale < 0.7 && showingZoomedImage {
+            showingZoomedImage = false
+            cell.scrollView.pinchGestureRecognizer?.enabled = false
+            cell.scrollView.pinchGestureRecognizer?.enabled = true
+            cell.scrollView.zoomScale = 1
+            for cell in collectionView!.visibleCells() as! [GalleryCellCollectionViewCell] {
+                cell.scrollView.userInteractionEnabled = false
+                cell.scrollView.zoomScale = 1
+                cell.scrollView.scrollEnabled = false
+            }
+            collectionView!.pagingEnabled = false
+            let layout = GridLayout()
+            collectionView!.startInteractiveTransitionToCollectionViewLayout(layout, completion: { completed, _ in
+                
+            })
+            collectionView?.finishInteractiveTransition()
+        }
+    }
+    
 }
 

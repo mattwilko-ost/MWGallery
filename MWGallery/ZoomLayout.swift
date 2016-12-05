@@ -36,7 +36,7 @@ class ZoomLayout: UICollectionViewFlowLayout {
         itemSize = collectionView!.frame.size
         super.prepareLayout()
     }
-    
+
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         let targetOffset = super.targetContentOffsetForProposedContentOffset(proposedContentOffset, withScrollingVelocity: velocity)
         page = Int(targetOffset.x / collectionView!.frame.width)
