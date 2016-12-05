@@ -14,6 +14,9 @@
 		DEEBB1B51DF1DA5600B45F2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEEBB1B31DF1DA5600B45F2B /* LaunchScreen.storyboard */; };
 		DEEBB1C01DF1DA5600B45F2B /* MWGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBB1BF1DF1DA5600B45F2B /* MWGalleryTests.swift */; };
 		DEEBB1CB1DF1DA5600B45F2B /* MWGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBB1CA1DF1DA5600B45F2B /* MWGalleryUITests.swift */; };
+		DEEBB1D91DF1DAA700B45F2B /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBB1D81DF1DAA700B45F2B /* GridLayout.swift */; };
+		DEEBB1DB1DF1DAC400B45F2B /* ZoomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBB1DA1DF1DAC400B45F2B /* ZoomLayout.swift */; };
+		DEEE401C1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE401B1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		DEEBB1C61DF1DA5600B45F2B /* MWGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEEBB1CA1DF1DA5600B45F2B /* MWGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWGalleryUITests.swift; sourceTree = "<group>"; };
 		DEEBB1CC1DF1DA5600B45F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEEBB1D81DF1DAA700B45F2B /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		DEEBB1DA1DF1DAC400B45F2B /* ZoomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomLayout.swift; sourceTree = "<group>"; };
+		DEEE401B1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				DEEBB1AA1DF1DA5600B45F2B /* AppDelegate.swift */,
 				DEEBB1AC1DF1DA5600B45F2B /* ViewController.swift */,
+				DEEE401B1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift */,
+				DEEBB1D81DF1DAA700B45F2B /* GridLayout.swift */,
+				DEEBB1DA1DF1DAC400B45F2B /* ZoomLayout.swift */,
 				DEEBB1AE1DF1DA5600B45F2B /* Main.storyboard */,
 				DEEBB1B11DF1DA5600B45F2B /* Assets.xcassets */,
 				DEEBB1B31DF1DA5600B45F2B /* LaunchScreen.storyboard */,
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEBB1D91DF1DAA700B45F2B /* GridLayout.swift in Sources */,
 				DEEBB1AD1DF1DA5600B45F2B /* ViewController.swift in Sources */,
+				DEEE401C1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift in Sources */,
+				DEEBB1DB1DF1DAC400B45F2B /* ZoomLayout.swift in Sources */,
 				DEEBB1AB1DF1DA5600B45F2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MWGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ostmodern.MWGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MWGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ostmodern.MWGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +498,7 @@
 				DEEBB1D11DF1DA5600B45F2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEEBB1D21DF1DA5600B45F2B /* Build configuration list for PBXNativeTarget "MWGalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +507,7 @@
 				DEEBB1D41DF1DA5600B45F2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEEBB1D51DF1DA5600B45F2B /* Build configuration list for PBXNativeTarget "MWGalleryUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +516,7 @@
 				DEEBB1D71DF1DA5600B45F2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
