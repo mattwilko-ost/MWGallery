@@ -17,7 +17,6 @@
 		DEEBB1D91DF1DAA700B45F2B /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBB1D81DF1DAA700B45F2B /* GridLayout.swift */; };
 		DEEBB1DB1DF1DAC400B45F2B /* ZoomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBB1DA1DF1DAC400B45F2B /* ZoomLayout.swift */; };
 		DEEE401C1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE401B1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift */; };
-		DEEE401E1DF589BF0068F8BA /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE401D1DF589BF0068F8BA /* ZoomTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		DEEBB1D81DF1DAA700B45F2B /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		DEEBB1DA1DF1DAC400B45F2B /* ZoomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomLayout.swift; sourceTree = "<group>"; };
 		DEEE401B1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCellCollectionViewCell.swift; sourceTree = "<group>"; };
-		DEEE401D1DF589BF0068F8BA /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,6 @@
 				DEEE401B1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift */,
 				DEEBB1D81DF1DAA700B45F2B /* GridLayout.swift */,
 				DEEBB1DA1DF1DAC400B45F2B /* ZoomLayout.swift */,
-				DEEE401D1DF589BF0068F8BA /* ZoomTransition.swift */,
 				DEEBB1AE1DF1DA5600B45F2B /* Main.storyboard */,
 				DEEBB1B11DF1DA5600B45F2B /* Assets.xcassets */,
 				DEEBB1B31DF1DA5600B45F2B /* LaunchScreen.storyboard */,
@@ -274,7 +271,6 @@
 				DEEE401C1DF57C540068F8BA /* GalleryCellCollectionViewCell.swift in Sources */,
 				DEEBB1DB1DF1DAC400B45F2B /* ZoomLayout.swift in Sources */,
 				DEEBB1AB1DF1DA5600B45F2B /* AppDelegate.swift in Sources */,
-				DEEE401E1DF589BF0068F8BA /* ZoomTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +417,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MWGallery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ostmodern.MWGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +432,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MWGallery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ostmodern.MWGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";

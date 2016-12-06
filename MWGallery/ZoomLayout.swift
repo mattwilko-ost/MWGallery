@@ -11,15 +11,12 @@ import UIKit
 class ZoomLayout: UICollectionViewFlowLayout {
     
     var page: Int = 0
-
-    func commonInit() {
-        scrollDirection = .Horizontal
-        minimumInteritemSpacing = 0
-        minimumLineSpacing = 0
-    }
+    var oldLayout: UICollectionViewLayout?
     
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
-        return true
+    init(oldLayout: UICollectionViewLayout) {
+        self.oldLayout = oldLayout
+        super.init()
+        commonInit()
     }
     
     override init() {
@@ -32,9 +29,33 @@ class ZoomLayout: UICollectionViewFlowLayout {
         commonInit()
     }
     
+    func commonInit() {
+        scrollDirection = .Horizontal
+        minimumInteritemSpacing = 0
+        minimumLineSpacing = 0
+    }
+    
+    override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        guard let oldLayout = oldLayout else {
+            return super.initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath)
+        }
+        
+        let attributes = oldLayout.layoutAttributesForItemAtIndexPath(itemIndexPath)
+        return attributes
+    }
+    
+    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+        return true
+    }
+  
     override func prepareLayout() {
         itemSize = collectionView!.frame.size
         super.prepareLayout()
+    }
+    
+    override func finalizeLayoutTransition() {
+        super.finalizeLayoutTransition()
+        oldLayout = nil
     }
 
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {

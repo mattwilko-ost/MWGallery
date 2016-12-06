@@ -10,9 +10,12 @@ import UIKit
 
 class GridLayout: UICollectionViewFlowLayout {
     
-    func commonInit() {
-        scrollDirection = .Vertical
-        itemSize = CGSize(width: 100, height: 100)
+    var oldLayout: UICollectionViewLayout?
+
+    init(oldLayout: UICollectionViewLayout) {
+        self.oldLayout = oldLayout
+        super.init()
+        commonInit()
     }
     
     override init() {
@@ -25,4 +28,23 @@ class GridLayout: UICollectionViewFlowLayout {
         commonInit()
     }
     
+    func commonInit() {
+        scrollDirection = .Vertical
+        itemSize = CGSize(width: 100, height: 100)
+    }
+    
+    override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        guard let oldLayout = oldLayout else {
+            return super.initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath)
+        }
+        
+        let attributes = oldLayout.layoutAttributesForItemAtIndexPath(itemIndexPath)
+        return attributes
+    }
+    
+    override func finalizeLayoutTransition() {
+        super.finalizeLayoutTransition()
+        oldLayout = nil
+    }
+
 }
